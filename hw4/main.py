@@ -38,7 +38,7 @@ content = 'Данный датасет включает в себя: \
 point_leaders = nba.groupby('Player').sum().sort_values(by='Points', ascending=False).head(10).reset_index()
 point_leaders = point_leaders.drop(['weight_kg', 'weight', 'height_cm', 'birth_year'], axis=1)
 
-app = dash.Dash()
+app = dash.Dash(__main__)
 server = app.server
 
 app.layout = html.Div([
